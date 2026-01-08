@@ -6,6 +6,12 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+# ✅ ROOT ROUTE (WRITE HERE)
+@app.get("/")
+def home():
+    return {"status": "Transport backend running"}
+
+
 # Define the structure of a cash memo
 class CashMemo(BaseModel):
     lr_no: str
